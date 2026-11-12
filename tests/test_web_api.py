@@ -73,13 +73,12 @@ def setup_app_state():
 
 def test_root_and_health():
     with TestClient(app) as client:
-        r1 = client.get("/")
+        r1 = client.get("/api/health")
         assert r1.status_code == 200
         assert r1.json() == {"status": "ok"}
 
-        r2 = client.get("/api/health")
+        r2 = client.get("/")
         assert r2.status_code == 200
-        assert r2.json() == {"status": "ok"}
 
 
 def test_get_investigations_empty():

@@ -70,7 +70,6 @@ app.add_middleware(
 )
 
 
-@app.get("/")
 @app.get("/api/health")
 async def health():
     return {"status": "ok"}
@@ -211,7 +210,7 @@ async def stream_investigation_events(investigation_id: str, request: Request):
         try:
             # Replay existing events
             for ev in list(record.events):
-                yield {"data": json.dumps(ev)}
+                yield {"data": json.dumps(ev, default=str)}
                 if ev.get("event_type") == "REPORT_READY":
                     return
 
@@ -231,7 +230,7 @@ async def stream_investigation_events(investigation_id: str, request: Request):
                 if item is None:
                     break
 
-                yield {"data": json.dumps(item)}
+                yield {"data": json.dumps(item, default=str)}
                 if item.get("event_type") == "REPORT_READY":
                     break
         finally:

@@ -48,7 +48,22 @@ class OpenAIProvider:
             "messages": messages,
         }
         if tools:
-            kwargs["tools"] = tools
+            formatted_tools = []
+            for t in tools:
+                if isinstance(t, dict) and t.get("type") == "function" and "function" in t:
+                    formatted_tools.append(t)
+                elif isinstance(t, dict):
+                    formatted_tools.append(
+                        {
+                            "type": "function",
+                            "function": {
+                                "name": t.get("name"),
+                                "description": t.get("description", ""),
+                                "parameters": t.get("parameters", {}),
+                            },
+                        }
+                    )
+            kwargs["tools"] = formatted_tools
 
         response = await self.client.chat.completions.create(**kwargs)
         choice = response.choices[0]

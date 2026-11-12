@@ -98,12 +98,20 @@ class InvestigationOrchestrator:
             key=lambda t: (t.is_anomaly, t.anomaly_score, t.total_count),
             reverse=True,
         )
+        min_ts = min((e.timestamp for e in events), default=None)
+        max_ts = max((e.timestamp for e in events), default=None)
+        time_header = (
+            f"Log time range spans from {min_ts.isoformat()} to {max_ts.isoformat()}.\n\n"
+            if min_ts and max_ts
+            else ""
+        )
+
         tpl_lines = [
             f"- [{t.template_id}] count={t.total_count} anomaly={t.is_anomaly} "
             f"score={t.anomaly_score:.2f} services={','.join(t.services)}: {t.pattern}"
             for t in sorted_templates[:20]
         ]
-        template_summary = "\n".join(tpl_lines) or "No templates found."
+        template_summary = time_header + ("\n".join(tpl_lines) or "No templates found.")
 
         anomalous = [t for t in templates if t.is_anomaly]
         anom_lines = [

@@ -43,7 +43,8 @@ class HypothesisTesterAgent(BaseAgent):
         system_prompt = (
             "You are an SRE investigator testing a hypothesis about a production incident. "
             "You have access to tools that query a log store. "
-            "Call tools to gather evidence. After gathering evidence, respond with a JSON object:\n"
+            "Call tools to gather evidence. When using search_logs, search for keywords such as error messages, service names, or status codes. "
+            "After gathering evidence, respond with a JSON object:\n"
             '{"supports": true/false, "summary": "...", "event_ids": [...], "confidence": 0.0-1.0}\n'
             "Respond ONLY with the JSON object when you have enough evidence."
         )
@@ -76,46 +77,53 @@ class HypothesisTesterAgent(BaseAgent):
                 self._process_verdict(resp.content, hypothesis, ledger)
                 break
 
-            # Execute each tool call
+            # Format and append the assistant message with all requested tool calls
+            assistant_tool_calls: list[dict] = []
             for tc in resp.tool_calls:
+                func = tc.get("function", {})
+                args_str = func.get("arguments", "{}")
+                if not isinstance(args_str, str):
+                    args_str = json.dumps(args_str)
+                assistant_tool_calls.append(
+                    {
+                        "id": tc.get("id", f"call_{len(assistant_tool_calls) + 1}"),
+                        "type": "function",
+                        "function": {
+                            "name": func.get("name", ""),
+                            "arguments": args_str,
+                        },
+                    }
+                )
+
+            messages.append(
+                {
+                    "role": "assistant",
+                    "content": resp.content or None,
+                    "tool_calls": assistant_tool_calls,
+                }
+            )
+
+            # Execute each tool and append the corresponding tool message
+            for tc in assistant_tool_calls:
                 calls_made += 1
                 self.tool_call_count += 1
-                func = tc.get("function", {})
-                tool_name = func.get("name", "")
+                tool_name = tc["function"]["name"]
                 try:
-                    args = json.loads(func.get("arguments", "{}"))
-                except json.JSONDecodeError:
+                    args = json.loads(tc["function"]["arguments"])
+                except Exception:
                     args = {}
 
                 result = self.tool_executor(tool_name, **args)
 
-                # Feed tool result back
-                messages.append(
-                    {
-                        "role": "assistant",
-                        "content": None,
-                        "tool_calls": [
-                            {
-                                "id": tc.get("id", f"call_{calls_made}"),
-                                "type": "function",
-                                "function": {
-                                    "name": tool_name,
-                                    "arguments": func.get("arguments", "{}"),
-                                },
-                            }
-                        ],
-                    }
-                )
                 messages.append(
                     {
                         "role": "tool",
-                        "tool_call_id": tc.get("id", f"call_{calls_made}"),
-                        "content": json.dumps(result) if isinstance(result, dict) else str(result),
+                        "tool_call_id": tc["id"],
+                        "content": json.dumps(result, default=str) if isinstance(result, (dict, list)) else str(result),
                     }
                 )
 
                 hypothesis.tests_run.append(tool_name)
-
                 if calls_made >= max_tool_calls:
                     break
         else:
@@ -162,3 +170,9 @@ class HypothesisTesterAgent(BaseAgent):
         confidence = data.get("confidence", 0.0)
         if isinstance(confidence, (int, float)):
             hypothesis.confidence = float(confidence)
+
+        if not data.get("supports", False) and float(confidence) >= 0.7:
+            try:
+                ledger.mark_refuted(hypothesis.id, reason=data.get("summary", "Refuted by evidence"))
+            except Exception:
+                pass
