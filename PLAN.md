@@ -88,6 +88,7 @@ from enum import Enum
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
 
+
 class LogLevel(str, Enum):
     DEBUG = "DEBUG"
     INFO = "INFO"
@@ -95,6 +96,7 @@ class LogLevel(str, Enum):
     ERROR = "ERROR"
     FATAL = "FATAL"
     UNKNOWN = "UNKNOWN"
+
 
 class LogEvent(BaseModel):
     event_id: str = Field(description="Unique event ID (e.g. evt_01h8...)")
@@ -110,6 +112,7 @@ class LogEvent(BaseModel):
     attributes: Dict[str, Any] = Field(default_factory=dict)
     raw_line: str
 
+
 class TemplateCluster(BaseModel):
     template_id: str
     pattern: str  # e.g., "Connection to <PARAM> timed out after <PARAM>ms"
@@ -121,12 +124,14 @@ class TemplateCluster(BaseModel):
     is_anomaly: bool = False
     anomaly_score: float = 0.0
 
+
 class HypothesisStatus(str, Enum):
     OPEN = "open"
     TESTING = "testing"
     SUPPORTED = "supported"
     REFUTED = "refuted"
     INCONCLUSIVE = "inconclusive"
+
 
 class EvidenceItem(BaseModel):
     evidence_id: str
@@ -139,6 +144,7 @@ class EvidenceItem(BaseModel):
     latest_timestamp: Optional[datetime] = None
     explanation: str
 
+
 class Hypothesis(BaseModel):
     id: str
     statement: str
@@ -150,6 +156,7 @@ class Hypothesis(BaseModel):
     tests_run: List[str] = Field(default_factory=list)
     critic_notes: Optional[str] = None
 
+
 class IncidentBrief(BaseModel):
     incident_window_start: datetime
     incident_window_end: datetime
@@ -157,6 +164,7 @@ class IncidentBrief(BaseModel):
     primary_symptoms: List[str]
     anomalous_templates: List[TemplateCluster]
     user_hint: Optional[str] = None
+
 
 class InvestigationReport(BaseModel):
     incident_id: str

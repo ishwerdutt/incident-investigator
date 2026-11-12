@@ -1,0 +1,598 @@
+2024-01-15 10:00:05.389 [DEBUG] [checkout-service] Cart total calculated: $176.72 for order ORD-10851
+2024-01-15 10:00:08.252 [DEBUG] [inventory-service] Cache hit for item SKU-4483 stock lookup
+2024-01-15 10:00:12.721 [INFO] [inventory-service] Reserved 4 units of item SKU-3045 for order ORD-80284 req-78355029
+2024-01-15 10:00:19.408 [INFO] [payment-service] Payment authorized: txn-973fbf3dfa for order ORD-31643 req-c97554fe
+2024-01-15 10:00:21.114 [DEBUG] [db-proxy] Query executed in 64ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:00:23.780 [DEBUG] [db-proxy] Query executed in 38ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:00:31.835 [INFO] [payment-service] Processing payment for order ORD-57576 amount $128.03 req-73b307c2 trace-bf32839915e6
+2024-01-15 10:00:38.027 [INFO] [api-gateway] Response sent: 201 Created in 18ms req-f87fb382
+2024-01-15 10:00:40.163 [INFO] [payment-service] Payment gateway response: APPROVED in 79ms req-77c934d6
+2024-01-15 10:00:42.273 [INFO] [api-gateway] Response sent: 200 OK in 34ms req-38488e69
+2024-01-15 10:00:52.032 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-5422 req-150ce01e trace-b54c6e6dc44e
+2024-01-15 10:01:01.183 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:01:04.927 [DEBUG] [db-proxy] Query executed in 13ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:01:06.099 [INFO] [inventory-service] Checking stock for item SKU-9834 req-96dcd5c8 trace-c105bfbd07de
+2024-01-15 10:01:12.303 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-61173 req-97a5ac8d
+2024-01-15 10:01:12.549 [DEBUG] [db-proxy] Query executed in 11ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:01:13.685 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-85880 req-72582a51
+2024-01-15 10:01:23.920 [INFO] [api-gateway] Request received: POST /api/checkout req-da65a793 trace-9b1ce394761e
+2024-01-15 10:01:26.497 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-68082 req-518fc10f
+2024-01-15 10:01:31.257 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-5462 req-61e51d37 trace-3b6b380d410e
+2024-01-15 10:01:34.218 [INFO] [inventory-service] Stock available: 485 units for item SKU-6180 req-8ec6576a
+2024-01-15 10:01:38.069 [INFO] [api-gateway] Request received: GET /api/products req-29cb5f65 trace-d5a4196164b3
+2024-01-15 10:01:41.521 [INFO] [inventory-service] Reserved 3 units of item SKU-4164 for order ORD-13101 req-0ab6d0b5
+2024-01-15 10:01:45.437 [INFO] [api-gateway] Request received: POST /api/checkout req-a3386fe9 trace-41e6360d3d90
+2024-01-15 10:01:52.567 [INFO] [inventory-service] Stock available: 90 units for item SKU-5669 req-8a10ac85
+2024-01-15 10:01:52.940 [DEBUG] [inventory-service] Cache hit for item SKU-3608 stock lookup
+2024-01-15 10:02:01.398 [INFO] [inventory-service] Reserved 5 units of item SKU-9947 for order ORD-80545 req-1cc12a61
+2024-01-15 10:02:11.051 [DEBUG] [db-proxy] Query executed in 73ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:02:16.785 [INFO] [api-gateway] Request received: GET /api/products req-b6237fdb trace-1a9269831b04
+2024-01-15 10:02:17.784 [DEBUG] [inventory-service] Cache hit for item SKU-9976 stock lookup
+2024-01-15 10:02:19.230 [DEBUG] [checkout-service] Cart total calculated: $335.29 for order ORD-96356
+2024-01-15 10:02:24.488 [INFO] [checkout-service] Processing checkout for order ORD-64496 req-a1010331 trace-485fe0955eb7
+2024-01-15 10:02:24.710 [DEBUG] [payment-service] Stripe webhook received for txn-02dd3142c3
+2024-01-15 10:02:25.249 [INFO] [checkout-service] Checkout completed successfully for order ORD-90120 in 65ms req-5416e0d9
+2024-01-15 10:02:26.680 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:02:27.071 [DEBUG] [db-proxy] Query executed in 60ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:02:27.845 [INFO] [db-proxy] Connection pool stats: active=20/50 idle=35/50 waiting=0
+2024-01-15 10:02:28.452 [DEBUG] [db-proxy] Query executed in 75ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:02:33.572 [INFO] [api-gateway] Request received: POST /api/checkout req-a2a67b84 trace-110794c7ccc1
+2024-01-15 10:02:38.523 [INFO] [inventory-service] Checking stock for item SKU-5349 req-39e1816c trace-bc37a5747a14
+2024-01-15 10:02:41.070 [DEBUG] [db-proxy] Query executed in 53ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:02:45.203 [DEBUG] [checkout-service] Cart total calculated: $22.58 for order ORD-31465
+2024-01-15 10:02:54.332 [INFO] [payment-service] Payment gateway response: APPROVED in 16ms req-8d50bcad
+2024-01-15 10:02:54.430 [INFO] [payment-service] Payment authorized: txn-f5196a1aa1 for order ORD-84177 req-f636e38e
+2024-01-15 10:03:01.996 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:03:03.192 [DEBUG] [db-proxy] Query executed in 37ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:03:05.160 [DEBUG] [db-proxy] Query executed in 44ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:03:17.791 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:03:20.618 [INFO] [payment-service] Payment gateway response: APPROVED in 43ms req-f7525660
+2024-01-15 10:03:24.461 [INFO] [payment-service] Processing payment for order ORD-21164 amount $384.58 req-62cadd4a trace-96491c63e53e
+2024-01-15 10:03:25.503 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-71524 req-a9edc478
+2024-01-15 10:03:30.283 [DEBUG] [db-proxy] Query executed in 29ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:03:30.353 [DEBUG] [db-proxy] Query executed in 5ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:03:30.661 [INFO] [checkout-service] Validating cart items for order ORD-82848 req-93beedf6
+2024-01-15 10:03:35.299 [INFO] [payment-service] Payment gateway response: APPROVED in 42ms req-4d8c0870
+2024-01-15 10:03:35.338 [INFO] [db-proxy] Connection acquired in 33ms for payment-service
+2024-01-15 10:03:41.452 [INFO] [api-gateway] Request received: POST /api/checkout req-283606ee trace-b9f547834fe5
+2024-01-15 10:03:43.239 [DEBUG] [checkout-service] Cart total calculated: $123.42 for order ORD-87832
+2024-01-15 10:03:44.507 [INFO] [inventory-service] Stock available: 188 units for item SKU-8700 req-e578eb35
+2024-01-15 10:03:50.314 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:03:53.157 [INFO] [payment-service] Payment authorized: txn-69e91353dd for order ORD-82384 req-169042a5
+2024-01-15 10:04:11.080 [INFO] [api-gateway] Request received: GET /api/products req-c36e5988 trace-2608cde56697
+2024-01-15 10:04:13.657 [DEBUG] [db-proxy] Query executed in 52ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:04:14.663 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:04:15.390 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-7951 req-60b40d18 trace-2c28c31cc5b1
+2024-01-15 10:04:16.935 [INFO] [payment-service] Payment gateway response: APPROVED in 42ms req-d8d54d49
+2024-01-15 10:04:23.222 [DEBUG] [payment-service] Stripe webhook received for txn-330d787ece
+2024-01-15 10:04:23.686 [DEBUG] [db-proxy] Query executed in 10ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:04:32.226 [INFO] [payment-service] Payment gateway response: APPROVED in 21ms req-6b0c9a28
+2024-01-15 10:04:40.735 [INFO] [checkout-service] Processing checkout for order ORD-91691 req-60f41dce trace-fb6586fe8ae8
+2024-01-15 10:04:42.811 [DEBUG] [payment-service] Stripe webhook received for txn-1c20698a77
+2024-01-15 10:04:43.559 [DEBUG] [db-proxy] Query executed in 79ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:04:44.306 [DEBUG] [db-proxy] Query executed in 41ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:04:47.508 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:04:50.404 [DEBUG] [db-proxy] Query executed in 19ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:04:50.451 [INFO] [inventory-service] Stock available: 357 units for item SKU-5106 req-a6d539b9
+2024-01-15 10:04:50.807 [INFO] [api-gateway] Response sent: 201 Created in 21ms req-4bc34436
+2024-01-15 10:04:50.922 [INFO] [payment-service] Processing payment for order ORD-84000 amount $111.51 req-a3567da9 trace-716b86667d02
+2024-01-15 10:04:55.670 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-53515 req-42f3f86e
+2024-01-15 10:05:07.420 [INFO] [db-proxy] Connection pool stats: active=16/50 idle=30/50 waiting=0
+2024-01-15 10:05:09.703 [INFO] [payment-service] Payment authorized: txn-a96cae4d63 for order ORD-54424 req-ff1c8a12
+2024-01-15 10:05:13.308 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:05:13.773 [INFO] [payment-service] Processing payment for order ORD-98338 amount $334.35 req-e1a5f2f3 trace-1d0004711fb3
+2024-01-15 10:05:20.795 [DEBUG] [checkout-service] Cart total calculated: $215.72 for order ORD-22026
+2024-01-15 10:05:22.006 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:05:23.117 [INFO] [db-proxy] Connection pool stats: active=9/50 idle=31/50 waiting=0
+2024-01-15 10:05:35.853 [INFO] [checkout-service] Checkout completed successfully for order ORD-11013 in 20ms req-a6e21838
+2024-01-15 10:05:38.151 [INFO] [payment-service] Payment gateway response: APPROVED in 12ms req-bdf650ab
+2024-01-15 10:05:41.898 [INFO] [checkout-service] Validating cart items for order ORD-59925 req-17757461
+2024-01-15 10:06:02.293 [INFO] [payment-service] Payment gateway response: APPROVED in 52ms req-28edce4d
+2024-01-15 10:06:05.596 [INFO] [payment-service] Processing payment for order ORD-53213 amount $149.23 req-bc95983a trace-c9718adcf8a4
+2024-01-15 10:06:06.149 [INFO] [inventory-service] Stock available: 281 units for item SKU-2868 req-56f37409
+2024-01-15 10:06:07.414 [INFO] [api-gateway] Request received: GET /api/health req-224f1541 trace-3a435438727c
+2024-01-15 10:06:20.154 [INFO] [checkout-service] Checkout completed successfully for order ORD-33218 in 14ms req-170f0a0c
+2024-01-15 10:06:26.054 [INFO] [api-gateway] Response sent: 201 Created in 62ms req-da5631a3
+2024-01-15 10:06:28.044 [INFO] [payment-service] Processing payment for order ORD-88282 amount $98.61 req-2aff76a9 trace-6bf3c7faf2cc
+2024-01-15 10:06:36.451 [INFO] [inventory-service] Stock available: 132 units for item SKU-9749 req-7da36bf5
+2024-01-15 10:06:42.433 [INFO] [checkout-service] Validating cart items for order ORD-26901 req-bd5ea3e1
+2024-01-15 10:06:49.346 [INFO] [inventory-service] Checking stock for item SKU-8199 req-72f0798e trace-b8361ddbfa9f
+2024-01-15 10:06:49.552 [INFO] [inventory-service] Checking stock for item SKU-8967 req-316bcab4 trace-dc20e4048a50
+2024-01-15 10:06:51.920 [INFO] [api-gateway] Request received: GET /api/health req-0e276372 trace-c17b1abafe54
+2024-01-15 10:06:53.293 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-1920 req-f414b86b trace-ea68448e3d15
+2024-01-15 10:06:54.528 [DEBUG] [inventory-service] Cache hit for item SKU-3267 stock lookup
+2024-01-15 10:06:55.317 [INFO] [inventory-service] Stock available: 442 units for item SKU-8155 req-a3c54fa7
+2024-01-15 10:07:05.046 [INFO] [payment-service] Processing payment for order ORD-30210 amount $363.11 req-2a26954b trace-a4bd5c096f51
+2024-01-15 10:07:07.818 [DEBUG] [payment-service] Stripe webhook received for txn-0089891983
+2024-01-15 10:07:09.298 [INFO] [inventory-service] Checking stock for item SKU-2816 req-9e491e80 trace-1f0ae91b31a3
+2024-01-15 10:07:20.955 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-27675 req-4ab40ab4
+2024-01-15 10:07:22.559 [DEBUG] [db-proxy] Query executed in 13ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:07:27.080 [INFO] [db-proxy] Connection acquired in 54ms for payment-service
+2024-01-15 10:07:28.043 [INFO] [payment-service] Payment authorized: txn-c47184ef26 for order ORD-52981 req-2069db69
+2024-01-15 10:07:28.781 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-7272 req-a9f2692c trace-09f56b040320
+2024-01-15 10:07:40.310 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-9501 req-d1aaf1fb trace-4d3bf5c057bb
+2024-01-15 10:07:43.800 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:07:49.266 [INFO] [payment-service] Payment authorized: txn-2f8208db6d for order ORD-42717 req-6b43277c
+2024-01-15 10:07:49.295 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-12490 req-ab84b0ce
+2024-01-15 10:07:50.505 [INFO] [inventory-service] Checking stock for item SKU-3852 req-1afc092d trace-97b4428655e7
+2024-01-15 10:07:52.588 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:07:54.327 [DEBUG] [db-proxy] Query executed in 67ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:07:55.481 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:07:58.889 [INFO] [checkout-service] Validating cart items for order ORD-55156 req-cef33e54
+2024-01-15 10:08:06.403 [INFO] [api-gateway] Response sent: 200 OK in 54ms req-b76a049b
+2024-01-15 10:08:13.597 [INFO] [payment-service] Payment gateway response: APPROVED in 70ms req-69f1f3a3
+2024-01-15 10:08:22.692 [INFO] [db-proxy] Connection pool stats: active=16/50 idle=30/50 waiting=0
+2024-01-15 10:08:23.046 [INFO] [api-gateway] Request received: GET /api/products req-a3878e8d trace-e23b7019ddd7
+2024-01-15 10:08:29.074 [DEBUG] [checkout-service] Cart total calculated: $246.64 for order ORD-92203
+2024-01-15 10:08:30.357 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:08:32.575 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-3353 req-0556010f trace-fdb742647925
+2024-01-15 10:08:32.793 [DEBUG] [payment-service] Stripe webhook received for txn-610528a708
+2024-01-15 10:08:33.467 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:08:33.644 [INFO] [inventory-service] Checking stock for item SKU-8775 req-06421661 trace-8c8364fa889c
+2024-01-15 10:08:52.017 [INFO] [payment-service] Payment authorized: txn-a7f9a74da0 for order ORD-61505 req-213c6e5f
+2024-01-15 10:08:52.335 [INFO] [inventory-service] Stock available: 35 units for item SKU-2586 req-dce60b4d
+2024-01-15 10:08:57.543 [DEBUG] [inventory-service] Cache hit for item SKU-5450 stock lookup
+2024-01-15 10:08:59.452 [INFO] [inventory-service] Reserved 2 units of item SKU-6654 for order ORD-61712 req-b408a4af
+2024-01-15 10:09:02.293 [INFO] [inventory-service] Checking stock for item SKU-2196 req-1c0c9d91 trace-e27c379fc23e
+2024-01-15 10:09:07.654 [INFO] [inventory-service] Reserved 4 units of item SKU-6026 for order ORD-71000 req-3e78f03f
+2024-01-15 10:09:12.828 [INFO] [inventory-service] Checking stock for item SKU-5662 req-e8cd0d11 trace-db776c2295a4
+2024-01-15 10:09:15.471 [DEBUG] [checkout-service] Cart total calculated: $340.01 for order ORD-10455
+2024-01-15 10:09:20.874 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-2011 req-1a5e0712 trace-be7c2fad43a0
+2024-01-15 10:09:29.688 [INFO] [db-proxy] Connection pool stats: active=15/50 idle=21/50 waiting=0
+2024-01-15 10:09:32.335 [INFO] [inventory-service] Stock available: 414 units for item SKU-6523 req-cc20472f
+2024-01-15 10:09:38.688 [INFO] [checkout-service] Validating cart items for order ORD-14222 req-74b36d6c
+2024-01-15 10:09:41.204 [INFO] [api-gateway] Request received: POST /api/checkout req-d92d4f80 trace-4bde85dc2e87
+2024-01-15 10:09:43.772 [INFO] [inventory-service] Reserved 5 units of item SKU-3509 for order ORD-72676 req-849c70a7
+2024-01-15 10:09:46.586 [INFO] [db-proxy] Connection pool stats: active=13/50 idle=29/50 waiting=0
+2024-01-15 10:09:50.507 [INFO] [inventory-service] Reserved 1 units of item SKU-4804 for order ORD-95498 req-2f16f713
+2024-01-15 10:09:55.356 [INFO] [checkout-service] Checkout completed successfully for order ORD-59081 in 58ms req-68da2e4f
+2024-01-15 10:10:03.632 [INFO] [payment-service] Processing payment for order ORD-10836 amount $43.30 req-d8bcb69d trace-8b1716e61052
+2024-01-15 10:10:19.979 [INFO] [payment-service] Payment authorized: txn-04259796e3 for order ORD-19539 req-304c1df2
+2024-01-15 10:10:24.477 [INFO] [api-gateway] Response sent: 200 OK in 20ms req-92582fcf
+2024-01-15 10:10:26.046 [INFO] [inventory-service] Reserved 4 units of item SKU-2615 for order ORD-71080 req-3b41584c
+2024-01-15 10:10:35.670 [INFO] [checkout-service] Checkout completed successfully for order ORD-85909 in 79ms req-d3543189
+2024-01-15 10:10:38.791 [INFO] [checkout-service] Processing checkout for order ORD-17398 req-a4642167 trace-48d3e845b2c7
+2024-01-15 10:10:41.980 [INFO] [inventory-service] Reserved 3 units of item SKU-3756 for order ORD-70401 req-a098e159
+2024-01-15 10:10:43.437 [INFO] [inventory-service] Stock available: 163 units for item SKU-7775 req-8f98e18c
+2024-01-15 10:10:54.230 [INFO] [db-proxy] Connection pool stats: active=10/50 idle=35/50 waiting=0
+2024-01-15 10:10:54.379 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-83044 req-0bbffa65
+2024-01-15 10:11:04.459 [INFO] [inventory-service] Checking stock for item SKU-9180 req-a9d879b0 trace-13f85c63ba07
+2024-01-15 10:11:06.940 [INFO] [db-proxy] Connection pool stats: active=16/50 idle=33/50 waiting=0
+2024-01-15 10:11:13.448 [DEBUG] [db-proxy] Query executed in 19ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:11:14.307 [INFO] [payment-service] Payment authorized: txn-e04dc1dd40 for order ORD-56457 req-440afdc5
+2024-01-15 10:11:16.966 [DEBUG] [db-proxy] Query executed in 68ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:11:21.440 [DEBUG] [db-proxy] Query executed in 22ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:11:21.466 [INFO] [payment-service] Payment authorized: txn-b89196ace6 for order ORD-48722 req-701591ae
+2024-01-15 10:11:22.566 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:11:23.400 [INFO] [inventory-service] Stock available: 64 units for item SKU-8052 req-64732c79
+2024-01-15 10:11:33.173 [INFO] [api-gateway] Request received: GET /api/products req-f6c77671 trace-b8be5a0f4f6f
+2024-01-15 10:11:35.524 [DEBUG] [db-proxy] Query executed in 44ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:11:48.757 [INFO] [api-gateway] Response sent: 200 OK in 55ms req-090f6c6f
+2024-01-15 10:11:49.254 [DEBUG] [db-proxy] Query executed in 58ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:11:50.248 [INFO] [payment-service] Payment authorized: txn-bdc430022c for order ORD-72784 req-47022b83
+2024-01-15 10:11:50.649 [INFO] [db-proxy] Connection acquired in 53ms for payment-service
+2024-01-15 10:11:54.997 [INFO] [api-gateway] Request received: GET /api/products req-69e1c69a trace-19a052fa397a
+2024-01-15 10:11:59.870 [INFO] [payment-service] Processing payment for order ORD-72324 amount $345.37 req-0eac1a8e trace-13c6d0278ba4
+2024-01-15 10:12:00.496 [DEBUG] [db-proxy] Query executed in 27ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:12:01.755 [DEBUG] [checkout-service] Cart total calculated: $318.58 for order ORD-65885
+2024-01-15 10:12:02.281 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-63626 req-b6d3f763
+2024-01-15 10:12:04.648 [INFO] [checkout-service] Checkout completed successfully for order ORD-98635 in 36ms req-bca512d6
+2024-01-15 10:12:13.830 [INFO] [db-proxy] Connection pool stats: active=15/50 idle=23/50 waiting=0
+2024-01-15 10:12:17.611 [INFO] [payment-service] Payment gateway response: APPROVED in 59ms req-1e316104
+2024-01-15 10:12:20.201 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-36972 req-2885fa7e
+2024-01-15 10:12:24.433 [INFO] [payment-service] Processing payment for order ORD-50026 amount $349.78 req-9bcee80a trace-c765e245ced8
+2024-01-15 10:12:28.559 [INFO] [payment-service] Payment gateway response: APPROVED in 68ms req-17430b65
+2024-01-15 10:12:29.650 [INFO] [api-gateway] Request received: GET /api/health req-745147f4 trace-adb6cadfeb89
+2024-01-15 10:12:45.819 [INFO] [api-gateway] Response sent: 201 Created in 45ms req-f61111ca
+2024-01-15 10:12:51.168 [DEBUG] [payment-service] Stripe webhook received for txn-7b15eba000
+2024-01-15 10:12:55.671 [INFO] [checkout-service] Validating cart items for order ORD-45041 req-b9acb7f5
+2024-01-15 10:13:01.868 [INFO] [checkout-service] Processing checkout for order ORD-51222 req-26cc728b trace-46326c5c086e
+2024-01-15 10:13:05.918 [INFO] [checkout-service] Checkout completed successfully for order ORD-67684 in 26ms req-4f4914c8
+2024-01-15 10:13:29.523 [INFO] [payment-service] Payment gateway response: APPROVED in 39ms req-b35bb6eb
+2024-01-15 10:13:31.975 [INFO] [checkout-service] Processing checkout for order ORD-69424 req-a152787f trace-e1d15566e8dc
+2024-01-15 10:13:34.550 [INFO] [inventory-service] Stock available: 331 units for item SKU-5693 req-9c720396
+2024-01-15 10:13:37.069 [INFO] [inventory-service] Stock available: 359 units for item SKU-9951 req-517ec9ca
+2024-01-15 10:13:40.312 [INFO] [inventory-service] Stock available: 138 units for item SKU-6905 req-0acc8835
+2024-01-15 10:13:44.351 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-37973 req-e3e7a026
+2024-01-15 10:13:44.447 [INFO] [checkout-service] Validating cart items for order ORD-30365 req-003c1426
+2024-01-15 10:13:49.832 [INFO] [api-gateway] Request received: GET /api/health req-28029ae4 trace-c4e20a3c1587
+2024-01-15 10:13:52.079 [INFO] [checkout-service] Processing checkout for order ORD-33456 req-6ac60cba trace-3ac589e3b4e8
+2024-01-15 10:13:54.883 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-2685 req-c4dcb228 trace-1f3e6d02548a
+2024-01-15 10:13:56.012 [INFO] [inventory-service] Stock available: 411 units for item SKU-1894 req-edabed45
+2024-01-15 10:13:57.698 [INFO] [api-gateway] Request received: GET /api/health req-08506a85 trace-f6da0ebd3ca9
+2024-01-15 10:13:58.135 [INFO] [api-gateway] Request received: GET /api/products req-93f0bc57 trace-c3d5a4f425e3
+2024-01-15 10:14:00.954 [INFO] [inventory-service] Stock available: 312 units for item SKU-7033 req-fb20f0fc
+2024-01-15 10:14:01.720 [INFO] [payment-service] Processing payment for order ORD-60911 amount $96.29 req-ccc2af78 trace-98d436adb791
+2024-01-15 10:14:03.693 [INFO] [inventory-service] Checking stock for item SKU-1660 req-bb55ffd2 trace-5c1c3622ee29
+2024-01-15 10:14:05.926 [INFO] [checkout-service] Checkout completed successfully for order ORD-86326 in 15ms req-8595e84d
+2024-01-15 10:14:08.429 [INFO] [inventory-service] Reserved 4 units of item SKU-5835 for order ORD-94840 req-e6af8bb0
+2024-01-15 10:14:08.652 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-7767 req-956f73e2 trace-739fb1e0b6f6
+2024-01-15 10:14:13.930 [INFO] [inventory-service] Checking stock for item SKU-8096 req-e2128527 trace-e183ceb70b0e
+2024-01-15 10:14:15.429 [INFO] [api-gateway] Response sent: 200 OK in 6ms req-9c153cc7
+2024-01-15 10:14:17.184 [INFO] [payment-service] Payment authorized: txn-2d3d3e76d1 for order ORD-60134 req-ea2d281d
+2024-01-15 10:14:28.278 [INFO] [db-proxy] Connection pool stats: active=19/50 idle=30/50 waiting=0
+2024-01-15 10:14:28.315 [INFO] [api-gateway] Response sent: 200 OK in 18ms req-136e4489
+2024-01-15 10:14:33.489 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:14:35.467 [INFO] [api-gateway] Request received: GET /api/products req-1ea0edea trace-aba7cf1b03c6
+2024-01-15 10:14:42.246 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:14:53.799 [INFO] [inventory-service] Stock available: 58 units for item SKU-5093 req-0c8e8722
+2024-01-15 10:15:00.415 [INFO] [api-gateway] Cron job started: cleanup_expired_sessions
+2024-01-15 10:15:02.186 [INFO] [payment-service] Payment gateway response: APPROVED in 27ms req-c430d85a
+2024-01-15 10:15:03.369 [DEBUG] [db-proxy] Query executed in 29ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:15:12.610 [INFO] [api-gateway] Cron job completed: cleanup_expired_sessions, removed 342 sessions in 12.4s
+2024-01-15 10:15:16.231 [INFO] [db-proxy] Connection acquired in 74ms for inventory-service
+2024-01-15 10:15:16.974 [DEBUG] [db-proxy] Query executed in 66ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:15:19.803 [INFO] [db-proxy] Connection pool stats: active=9/50 idle=35/50 waiting=0
+2024-01-15 10:15:20.178 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:15:24.569 [INFO] [checkout-service] Checkout completed successfully for order ORD-20271 in 59ms req-3d5261f9
+2024-01-15 10:15:36.798 [INFO] [payment-service] Payment gateway response: APPROVED in 6ms req-e5676eb4
+2024-01-15 10:15:38.697 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:15:41.168 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:15:42.654 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:15:48.459 [DEBUG] [payment-service] Stripe webhook received for txn-8f438ffa0a
+2024-01-15 10:15:52.535 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:15:55.373 [INFO] [payment-service] Payment authorized: txn-1355843760 for order ORD-52413 req-4c74f695
+2024-01-15 10:15:56.423 [DEBUG] [inventory-service] Cache hit for item SKU-5205 stock lookup
+2024-01-15 10:16:03.166 [DEBUG] [db-proxy] Query executed in 75ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:16:07.888 [INFO] [inventory-service] Reserved 5 units of item SKU-1879 for order ORD-71674 req-561998a1
+2024-01-15 10:16:12.896 [INFO] [payment-service] Payment gateway response: APPROVED in 25ms req-8090002b
+2024-01-15 10:16:16.671 [DEBUG] [payment-service] Stripe webhook received for txn-a78ab60134
+2024-01-15 10:16:16.928 [INFO] [inventory-service] Stock available: 348 units for item SKU-7620 req-7287d50c
+2024-01-15 10:16:17.863 [INFO] [api-gateway] Request received: GET /api/health req-2ba59312 trace-47447554b37a
+2024-01-15 10:16:19.865 [INFO] [db-proxy] Connection acquired in 78ms for payment-service
+2024-01-15 10:16:23.500 [INFO] [checkout-service] Processing checkout for order ORD-36097 req-a653ac32 trace-245ee7601a1e
+2024-01-15 10:16:43.533 [DEBUG] [checkout-service] Cart total calculated: $427.28 for order ORD-94245
+2024-01-15 10:16:47.496 [INFO] [api-gateway] Response sent: 200 OK in 61ms req-5635442c
+2024-01-15 10:16:48.853 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-8821 req-d9a41968 trace-b369304cb03b
+2024-01-15 10:16:50.781 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-1950 req-469b9f79 trace-a0e806dccc45
+2024-01-15 10:16:50.908 [INFO] [payment-service] Payment authorized: txn-5b1ac57df9 for order ORD-83273 req-79a33d3f
+2024-01-15 10:16:52.046 [INFO] [checkout-service] Processing checkout for order ORD-39657 req-d1e26467 trace-491d98b03920
+2024-01-15 10:16:55.732 [DEBUG] [db-proxy] Query executed in 24ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:16:58.135 [INFO] [payment-service] Payment authorized: txn-1ae660d414 for order ORD-45269 req-822f3395
+2024-01-15 10:17:00.013 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:17:03.677 [INFO] [checkout-service] Checkout completed successfully for order ORD-26143 in 26ms req-95a95327
+2024-01-15 10:17:14.229 [DEBUG] [db-proxy] Query executed in 22ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:17:15.338 [DEBUG] [db-proxy] Query executed in 11ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:17:20.121 [INFO] [inventory-service] Checking stock for item SKU-4850 req-f015c784 trace-916762c24cea
+2024-01-15 10:17:22.915 [INFO] [checkout-service] Processing checkout for order ORD-65836 req-f1bfd4c8 trace-191bcf53dc48
+2024-01-15 10:17:24.797 [INFO] [checkout-service] Processing checkout for order ORD-23593 req-d0fe649a trace-568aec1580be
+2024-01-15 10:17:26.677 [INFO] [api-gateway] Request received: GET /api/products req-46bc457b trace-f26c954716bb
+2024-01-15 10:17:29.051 [INFO] [api-gateway] Request received: POST /api/checkout req-d6cc5329 trace-cc22a138b0c1
+2024-01-15 10:17:38.204 [INFO] [payment-service] Payment gateway response: APPROVED in 58ms req-b1380c3b
+2024-01-15 10:17:41.907 [INFO] [payment-service] Payment gateway response: APPROVED in 48ms req-271ec354
+2024-01-15 10:17:42.467 [INFO] [api-gateway] Request received: POST /api/checkout req-c3ae933b trace-02c96a5a260c
+2024-01-15 10:17:42.692 [INFO] [payment-service] Payment authorized: txn-8791df50e7 for order ORD-78039 req-0c9ebb6a
+2024-01-15 10:17:45.889 [INFO] [payment-service] Processing payment for order ORD-73318 amount $225.94 req-a658dcdf trace-052375fbbd0f
+2024-01-15 10:18:03.013 [INFO] [payment-service] Payment authorized: txn-a1c46ce47a for order ORD-76967 req-b4016da7
+2024-01-15 10:18:03.686 [DEBUG] [payment-service] Stripe webhook received for txn-38fb4470b0
+2024-01-15 10:18:07.779 [INFO] [payment-service] Payment authorized: txn-36968541f1 for order ORD-99995 req-18e3f034
+2024-01-15 10:18:13.468 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:18:14.979 [INFO] [checkout-service] Processing checkout for order ORD-91968 req-9dc73d0e trace-e047cd49ec67
+2024-01-15 10:18:18.223 [INFO] [payment-service] Processing payment for order ORD-80390 amount $118.39 req-26196aa5 trace-910cbefd43f2
+2024-01-15 10:18:21.363 [INFO] [inventory-service] Checking stock for item SKU-8751 req-b6babb92 trace-88c7f0566071
+2024-01-15 10:18:21.477 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-1665 req-44146019 trace-f65d2297f521
+2024-01-15 10:18:28.181 [INFO] [inventory-service] Stock available: 396 units for item SKU-7025 req-45d7d270
+2024-01-15 10:18:35.881 [INFO] [payment-service] Payment authorized: txn-7466e02cda for order ORD-69355 req-38ef59d2
+2024-01-15 10:18:43.906 [DEBUG] [payment-service] Stripe webhook received for txn-78ce113a58
+2024-01-15 10:18:47.049 [INFO] [checkout-service] Validating cart items for order ORD-26150 req-ed6db0fc
+2024-01-15 10:18:52.463 [INFO] [checkout-service] Validating cart items for order ORD-99573 req-71d2afbd
+2024-01-15 10:18:56.393 [DEBUG] [db-proxy] Query executed in 27ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:18:57.667 [INFO] [db-proxy] Connection pool stats: active=15/50 idle=21/50 waiting=0
+2024-01-15 10:19:02.684 [DEBUG] [checkout-service] Cart total calculated: $383.12 for order ORD-73373
+2024-01-15 10:19:04.913 [DEBUG] [db-proxy] Query executed in 15ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:19:07.185 [INFO] [payment-service] Processing payment for order ORD-37752 amount $79.80 req-77dc592d trace-a6761c6636fb
+2024-01-15 10:19:08.456 [INFO] [payment-service] Payment gateway response: APPROVED in 16ms req-82fb267f
+2024-01-15 10:19:13.550 [INFO] [payment-service] Processing payment for order ORD-79888 amount $113.28 req-349f325f trace-ac6e15f005a1
+2024-01-15 10:19:22.131 [INFO] [payment-service] Processing payment for order ORD-70458 amount $132.84 req-88658b00 trace-9c7b1ba3f87e
+2024-01-15 10:19:22.793 [DEBUG] [inventory-service] Cache hit for item SKU-8145 stock lookup
+2024-01-15 10:19:25.228 [INFO] [payment-service] Processing payment for order ORD-37886 amount $276.30 req-73fd6f61 trace-1f9b2b12c2b8
+2024-01-15 10:19:34.225 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:19:34.583 [INFO] [payment-service] Payment gateway response: APPROVED in 10ms req-4ec1bbb5
+2024-01-15 10:19:36.373 [INFO] [checkout-service] Processing checkout for order ORD-51652 req-40c66483 trace-b6489c7031fb
+2024-01-15 10:19:36.610 [DEBUG] [db-proxy] Query executed in 43ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:19:37.046 [DEBUG] [inventory-service] Cache hit for item SKU-1276 stock lookup
+2024-01-15 10:19:52.233 [INFO] [db-proxy] Connection pool stats: active=16/50 idle=22/50 waiting=0
+2024-01-15 10:19:56.618 [INFO] [db-proxy] Connection acquired in 14ms for inventory-service
+2024-01-15 10:20:00.660 [WARN] [inventory-service] Health check: disk usage at 78% on /data volume
+2024-01-15 10:20:05.282 [DEBUG] [checkout-service] Cart total calculated: $340.27 for order ORD-77608
+2024-01-15 10:20:13.459 [INFO] [payment-service] Payment authorized: txn-b3a7f2d0c0 for order ORD-77717 req-b1ff60d2
+2024-01-15 10:20:14.457 [INFO] [checkout-service] Validating cart items for order ORD-85713 req-759d54d3
+2024-01-15 10:20:23.109 [INFO] [inventory-service] Stock available: 70 units for item SKU-9561 req-a7317462
+2024-01-15 10:20:31.449 [INFO] [api-gateway] Request received: POST /api/checkout req-1b983add trace-5658e99080d3
+2024-01-15 10:20:32.040 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-7732 req-655e8881 trace-6e90aa48030d
+2024-01-15 10:20:32.770 [INFO] [db-proxy] Connection acquired in 71ms for payment-service
+2024-01-15 10:20:37.070 [INFO] [db-proxy] Connection acquired in 23ms for payment-service
+2024-01-15 10:20:43.952 [INFO] [inventory-service] Checking stock for item SKU-3924 req-88245602 trace-0d2f37345f52
+2024-01-15 10:20:50.570 [DEBUG] [db-proxy] Query executed in 59ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:20:51.338 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-37723 req-abbb54e0
+2024-01-15 10:20:51.493 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-8069 req-d39aa5c1 trace-96f5eb09f73e
+2024-01-15 10:20:51.525 [INFO] [payment-service] Payment authorized: txn-2d1d92ba33 for order ORD-44223 req-0d417869
+2024-01-15 10:20:52.283 [DEBUG] [db-proxy] Query executed in 30ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:20:53.269 [INFO] [api-gateway] Response sent: 201 Created in 33ms req-a8764453
+2024-01-15 10:20:55.028 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:20:56.556 [DEBUG] [db-proxy] Query executed in 78ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:20:59.614 [INFO] [checkout-service] Processing checkout for order ORD-82165 req-f85db14b trace-852a33b5cc33
+2024-01-15 10:21:01.421 [INFO] [api-gateway] Response sent: 200 OK in 17ms req-6eae2f37
+2024-01-15 10:21:06.707 [INFO] [db-proxy] Connection acquired in 71ms for inventory-service
+2024-01-15 10:21:11.585 [DEBUG] [inventory-service] Cache hit for item SKU-7945 stock lookup
+2024-01-15 10:21:11.782 [DEBUG] [db-proxy] Query executed in 10ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:21:16.963 [DEBUG] [payment-service] Stripe webhook received for txn-f372d63b3e
+2024-01-15 10:21:18.727 [DEBUG] [db-proxy] Query executed in 48ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:21:24.628 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:21:35.269 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-51373 req-763893d1
+2024-01-15 10:21:39.159 [INFO] [api-gateway] Response sent: 200 OK in 13ms req-abc19a6e
+2024-01-15 10:21:51.009 [INFO] [payment-service] Payment authorized: txn-10f24307b4 for order ORD-82789 req-144c48a9
+2024-01-15 10:21:55.487 [DEBUG] [db-proxy] Query executed in 61ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:21:55.702 [INFO] [payment-service] Payment gateway response: APPROVED in 21ms req-7871f562
+2024-01-15 10:21:58.080 [DEBUG] [db-proxy] Query executed in 38ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:22:00.794 [DEBUG] [db-proxy] Query executed in 75ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:22:04.967 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-7046 req-f9bb31d8 trace-f6fa3938b1dc
+2024-01-15 10:22:05.702 [INFO] [payment-service] Processing payment for order ORD-86162 amount $85.95 req-8cb6374f trace-21a6129b129e
+2024-01-15 10:22:06.497 [INFO] [payment-service] Payment authorized: txn-3f5826cf98 for order ORD-24478 req-ed237717
+2024-01-15 10:22:06.784 [INFO] [payment-service] Processing payment for order ORD-34832 amount $289.31 req-58bf1538 trace-4bc76c6a5f79
+2024-01-15 10:22:10.813 [INFO] [payment-service] Processing payment for order ORD-57241 amount $486.90 req-9d38ff65 trace-b6c9d3a9a611
+2024-01-15 10:22:15.167 [INFO] [db-proxy] Connection acquired in 42ms for inventory-service
+2024-01-15 10:22:17.128 [DEBUG] [db-proxy] Query executed in 67ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:22:18.113 [INFO] [db-proxy] Connection acquired in 35ms for checkout-service
+2024-01-15 10:22:22.331 [DEBUG] [db-proxy] Query executed in 10ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:22:30.142 [INFO] [db-proxy] Configuration reload triggered by SIGHUP, no changes detected
+2024-01-15 10:22:30.552 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:22:31.950 [INFO] [api-gateway] Request received: GET /api/products req-4ca609f7 trace-912ad0b96d08
+2024-01-15 10:22:34.008 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-1172 req-6718553e trace-1a2a800ee692
+2024-01-15 10:22:40.745 [INFO] [db-proxy] Connection acquired in 30ms for checkout-service
+2024-01-15 10:22:43.509 [DEBUG] [payment-service] Stripe webhook received for txn-c3a1193bc1
+2024-01-15 10:22:46.197 [INFO] [inventory-service] Checking stock for item SKU-3061 req-e138ae57 trace-2f1c1a06de6b
+2024-01-15 10:22:49.731 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-8702 req-2030c740 trace-9d5a6875a5de
+2024-01-15 10:22:50.032 [INFO] [db-proxy] Connection pool stats: active=13/50 idle=34/50 waiting=0
+2024-01-15 10:23:00.068 [DEBUG] [db-proxy] Query executed in 37ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:23:00.351 [DEBUG] [db-proxy] Query executed in 34ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:23:12.512 [INFO] [inventory-service] Reserved 1 units of item SKU-7237 for order ORD-40299 req-a49803de
+2024-01-15 10:23:16.830 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:23:28.458 [INFO] [inventory-service] Reserved 5 units of item SKU-4943 for order ORD-89745 req-0edce00f
+2024-01-15 10:23:32.444 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-54062 req-7b90ac10
+2024-01-15 10:23:36.516 [INFO] [api-gateway] Response sent: 201 Created in 77ms req-976cfb39
+2024-01-15 10:23:39.841 [INFO] [payment-service] Processing payment for order ORD-55653 amount $301.00 req-c96015fe trace-ccfe688233bd
+2024-01-15 10:23:40.309 [DEBUG] [db-proxy] Query executed in 36ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:23:41.307 [INFO] [api-gateway] Request received: GET /api/health req-ca68b3a3 trace-bd270d293128
+2024-01-15 10:23:44.684 [INFO] [api-gateway] Response sent: 201 Created in 31ms req-a5ace5f4
+2024-01-15 10:23:49.440 [INFO] [checkout-service] Checkout completed successfully for order ORD-95491 in 55ms req-a5b2c1b1
+2024-01-15 10:23:49.647 [DEBUG] [payment-service] Stripe webhook received for txn-872ad24068
+2024-01-15 10:23:49.841 [INFO] [db-proxy] Connection pool stats: active=11/50 idle=30/50 waiting=0
+2024-01-15 10:23:57.322 [INFO] [db-proxy] Connection acquired in 28ms for inventory-service
+2024-01-15 10:24:03.111 [INFO] [api-gateway] Request received: GET /api/health req-84eb7a8d trace-cb6eedde746d
+2024-01-15 10:24:03.111 [INFO] [payment-service] Payment authorized: txn-7d4a0bb23c for order ORD-14813 req-d9b943a1
+2024-01-15 10:24:04.181 [INFO] [db-proxy] Connection acquired in 33ms for checkout-service
+2024-01-15 10:24:18.450 [INFO] [payment-service] Processing payment for order ORD-42207 amount $492.08 req-529fd000 trace-09e3e323b100
+2024-01-15 10:24:19.705 [INFO] [payment-service] Payment authorized: txn-03c691e649 for order ORD-50944 req-f867d147
+2024-01-15 10:24:23.919 [INFO] [checkout-service] Checkout completed successfully for order ORD-83685 in 78ms req-76f788fd
+2024-01-15 10:24:24.533 [INFO] [inventory-service] Checking stock for item SKU-5590 req-9509d650 trace-840fac4b91b6
+2024-01-15 10:24:26.331 [INFO] [inventory-service] Reserved 4 units of item SKU-3330 for order ORD-77760 req-77df1205
+2024-01-15 10:24:26.423 [DEBUG] [db-proxy] Query executed in 42ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:24:29.509 [INFO] [api-gateway] Request received: GET /api/health req-acfb01b2 trace-c98322037593
+2024-01-15 10:24:39.961 [DEBUG] [db-proxy] Query executed in 63ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:24:41.382 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:24:46.126 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-2477 req-d9817543 trace-cad8e66858bc
+2024-01-15 10:24:46.647 [INFO] [payment-service] Processing payment for order ORD-65974 amount $291.82 req-d01adea1 trace-1f48bfcc441b
+2024-01-15 10:24:48.626 [DEBUG] [api-gateway] Rate limiter: 42/1000 requests in current window
+2024-01-15 10:24:53.900 [INFO] [payment-service] Payment authorized: txn-398aa4220a for order ORD-96013 req-55174a7f
+2024-01-15 10:24:55.148 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-3619 req-1d402737 trace-0caef1171b25
+2024-01-15 10:24:56.560 [DEBUG] [db-proxy] Query executed in 68ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:25:04.486 [INFO] [db-proxy] Connection acquired in 38ms for checkout-service
+2024-01-15 10:25:07.383 [INFO] [inventory-service] Reserved 4 units of item SKU-4893 for order ORD-75149 req-46f48ff1
+2024-01-15 10:25:07.885 [INFO] [inventory-service] Checking stock for item SKU-7147 req-9386a34d trace-7bd3780493bf
+2024-01-15 10:25:08.493 [DEBUG] [db-proxy] Query executed in 27ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:25:09.161 [INFO] [api-gateway] Response sent: 201 Created in 31ms req-1810eaaf
+2024-01-15 10:25:09.787 [INFO] [api-gateway] Response sent: 200 OK in 8ms req-3f54269a
+2024-01-15 10:25:15.175 [INFO] [api-gateway] Request received: GET /api/products req-746698aa trace-62969131f29e
+2024-01-15 10:25:29.317 [DEBUG] [payment-service] Stripe webhook received for txn-680c04a26d
+2024-01-15 10:25:29.910 [INFO] [api-gateway] Request received: GET /api/inventory/SKU-2897 req-8778ae2f trace-0a493d5adb71
+2024-01-15 10:25:35.099 [DEBUG] [db-proxy] Query executed in 35ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:25:36.701 [DEBUG] [db-proxy] Query executed in 57ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:25:37.441 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:25:41.072 [DEBUG] [inventory-service] Cache hit for item SKU-3087 stock lookup
+2024-01-15 10:25:43.341 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:25:45.610 [INFO] [inventory-service] Inventory sync completed for warehouse WH-01
+2024-01-15 10:26:00.735 [INFO] [checkout-service] Checkout completed successfully for order ORD-68610 in 78ms req-fc8f3676
+2024-01-15 10:26:03.573 [INFO] [inventory-service] Checking stock for item SKU-3089 req-eeec5667 trace-cb5aad8428e7
+2024-01-15 10:26:06.177 [INFO] [inventory-service] Checking stock for item SKU-7459 req-58e9331a trace-9fbd2dddef03
+2024-01-15 10:26:09.906 [INFO] [checkout-service] Checkout completed successfully for order ORD-64687 in 51ms req-dfba488c
+2024-01-15 10:26:12.231 [DEBUG] [db-proxy] Query executed in 58ms: SELECT * FROM orders WHERE id = $1
+2024-01-15 10:26:15.372 [WARN] [db-proxy] Connection pool utilization at 80% (40/50 active connections)
+2024-01-15 10:26:15.377 [DEBUG] [db-proxy] Query executed in 35ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:26:18.759 [DEBUG] [payment-service] Stripe webhook received for txn-5ef6d9f94d
+2024-01-15 10:26:21.983 [INFO] [api-gateway] Response sent: 201 Created in 73ms req-e7f3c222
+2024-01-15 10:26:24.639 [INFO] [inventory-service] Reserved 4 units of item SKU-5267 for order ORD-83886 req-73868daf
+2024-01-15 10:26:27.178 [DEBUG] [inventory-service] Cache hit for item SKU-3171 stock lookup
+2024-01-15 10:26:30.609 [INFO] [payment-service] Payment authorized: txn-cb6fa21643 for order ORD-44242 req-630fea95
+2024-01-15 10:26:30.631 [WARN] [db-proxy] Connection pool utilization at 82% (41/50 active connections)
+2024-01-15 10:26:33.270 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-41188 req-25ad7591
+2024-01-15 10:26:36.891 [INFO] [api-gateway] Request received: GET /api/products req-8b136c71 trace-bd6c50a507d8
+2024-01-15 10:26:39.276 [INFO] [api-gateway] Response sent: 201 Created in 45ms req-bb951515
+2024-01-15 10:26:42.008 [INFO] [api-gateway] Response sent: 201 Created in 35ms req-bae93c02
+2024-01-15 10:26:45.106 [INFO] [db-proxy] Connection acquired in 245ms for checkout-service (elevated latency)
+2024-01-15 10:26:45.961 [INFO] [api-gateway] Request received: GET /api/products req-483bdbea trace-eb882908380e
+2024-01-15 10:26:48.301 [DEBUG] [checkout-service] Cart total calculated: $403.57 for order ORD-21322
+2024-01-15 10:26:51.340 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-6298 req-ca832bba trace-9bedd5792974
+2024-01-15 10:26:52.161 [WARN] [checkout-service] Database query took 380ms (threshold: 200ms) for order ORD-44521 req-slow001 trace-slow001
+2024-01-15 10:26:54.658 [INFO] [inventory-service] Reserved 4 units of item SKU-7432 for order ORD-89993 req-5372c8bd
+2024-01-15 10:26:57.155 [DEBUG] [db-proxy] Query executed in 78ms: UPDATE inventory SET stock = stock - $1 WHERE item_id = $2
+2024-01-15 10:27:00.580 [DEBUG] [db-proxy] Query executed in 67ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:27:05.072 [WARN] [db-proxy] Connection pool utilization at 88% (44/50 active connections)
+2024-01-15 10:27:05.207 [INFO] [inventory-service] Reserved 3 units of item SKU-9759 for order ORD-57887 req-485385e9
+2024-01-15 10:27:10.036 [INFO] [payment-service] Processing payment for order ORD-61131 amount $248.39 req-7b13bce1 trace-5e21b82cec24
+2024-01-15 10:27:15.057 [INFO] [api-gateway] Response sent: 200 OK in 74ms req-a03f50ee
+2024-01-15 10:27:15.593 [WARN] [db-proxy] Connection pool utilization at 90% (45/50 active connections)
+2024-01-15 10:27:20.669 [INFO] [api-gateway] Request received: GET /api/health req-3a8c5e98 trace-5ac2169d7f6f
+2024-01-15 10:27:25.174 [DEBUG] [db-proxy] Query executed in 21ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:27:25.919 [WARN] [db-proxy] Slow query detected: 520ms for SELECT * FROM orders WHERE status = 'pending'
+2024-01-15 10:27:30.123 [INFO] [payment-service] Processing payment for order ORD-87984 amount $218.84 req-58ba8236 trace-5983f8e1c813
+2024-01-15 10:27:35.233 [WARN] [checkout-service] Database query took 610ms (threshold: 200ms) for order ORD-55102 req-slow002 trace-slow002
+2024-01-15 10:27:35.378 [INFO] [payment-service] Payment authorized: txn-c7525e17c3 for order ORD-15975 req-5378c095
+2024-01-15 10:27:40.204 [WARN] [inventory-service] Stock check query took 450ms for item SKU-3321 req-slow003 trace-slow003
+2024-01-15 10:27:40.948 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-23102 req-9a5bc813
+2024-01-15 10:27:45.184 [INFO] [payment-service] Payment gateway response: APPROVED in 65ms req-1db8649c
+2024-01-15 10:27:50.370 [DEBUG] [db-proxy] Query executed in 43ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:27:50.599 [WARN] [db-proxy] Connection pool utilization at 94% (47/50 active connections)
+2024-01-15 10:27:55.163 [INFO] [payment-service] Payment authorized: txn-946566625b for order ORD-46231 req-42fb5951
+2024-01-15 10:27:55.221 [WARN] [db-proxy] Connection acquired in 1200ms for inventory-service (critical latency)
+2024-01-15 10:27:58.382 [INFO] [api-gateway] Feature flag refresh: dark_mode_v2=true, new_checkout_flow=false
+2024-01-15 10:28:05.367 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 12 requests waiting
+2024-01-15 10:28:08.032 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 18 requests waiting
+2024-01-15 10:28:10.113 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-fail001 trace-fail001
+2024-01-15 10:28:12.778 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 25 requests waiting
+2024-01-15 10:28:15.160 [ERROR] [checkout-service] Checkout failed: database connection timeout for order ORD-67123 req-fail002 trace-fail002
+2024-01-15 10:28:18.927 [ERROR] [inventory-service] Failed to acquire database connection: timeout after 5000ms req-fail003 trace-fail003
+2024-01-15 10:28:20.235 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-fail004 trace-fail004
+2024-01-15 10:28:22.882 [WARN] [db-proxy] Connection pool exhausted: 50/50 active, 31 requests waiting
+2024-01-15 10:28:25.285 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5023ms req-fail005 trace-fail005
+2024-01-15 10:28:28.252 [ERROR] [checkout-service] Circuit breaker OPEN for db-proxy after 5 consecutive failures req-fail006
+2024-01-15 10:28:30.913 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 38 requests waiting
+2024-01-15 10:28:35.587 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for GET /api/inventory/SKU-2210 in 5015ms req-fail007 trace-fail007
+2024-01-15 10:28:40.041 [ERROR] [inventory-service] Failed to query stock for item SKU-2210: connection timeout req-fail007 trace-fail007
+2024-01-15 10:28:45.435 [ERROR] [checkout-service] Checkout failed: database connection timeout for order ORD-71234 req-fail008 trace-fail008
+2024-01-15 10:28:50.713 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5031ms req-fail009 trace-fail009
+2024-01-15 10:28:55.085 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 42 requests waiting
+2024-01-15 10:29:00.367 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-da9ad7d2 trace-d1fc6704dcbe
+2024-01-15 10:29:05.979 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-f840b8b0 trace-a5d7d01439c4
+2024-01-15 10:29:06.895 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 34 requests waiting
+2024-01-15 10:29:07.179 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 41 requests waiting
+2024-01-15 10:29:08.641 [ERROR] [inventory-service] Failed to query stock for item SKU-7068: connection timeout req-b708cf21 trace-adf61b1d38df
+2024-01-15 10:29:15.165 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5078ms req-a792d6f8 trace-5bdd1edf0827
+2024-01-15 10:29:17.353 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 41 requests waiting
+2024-01-15 10:29:21.909 [INFO] [api-gateway] Response sent: 200 OK in 143ms req-4e1c22a9
+2024-01-15 10:29:29.474 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 44 requests waiting
+2024-01-15 10:29:31.694 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5136ms req-3560bb23 trace-3ccc00c70523
+2024-01-15 10:29:33.968 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-027ecaea trace-67c78afea5e3
+2024-01-15 10:29:34.635 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-8e840d69 trace-44332f86cb00
+2024-01-15 10:29:34.689 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-f6649af4 trace-a52f9f861d27
+2024-01-15 10:29:34.892 [INFO] [api-gateway] Response sent: 200 OK in 198ms req-7235e8a3
+2024-01-15 10:29:35.342 [ERROR] [inventory-service] Failed to query stock for item SKU-3267: connection timeout req-e7d8a03e trace-714dda00112e
+2024-01-15 10:29:44.361 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-dad4740b trace-d6bb92aae9ae
+2024-01-15 10:29:44.905 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 58 requests waiting
+2024-01-15 10:29:45.707 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 58 requests waiting
+2024-01-15 10:30:02.188 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5094ms req-2c89b511 trace-8af3a1c1de4e
+2024-01-15 10:30:04.660 [WARN] [db-proxy] Connection wait queue depth: 46 (max: 100)
+2024-01-15 10:30:10.996 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5046ms req-43b09ec2 trace-6e0fb9412858
+2024-01-15 10:30:18.466 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-5262aafc trace-726620ee2420
+2024-01-15 10:30:26.607 [ERROR] [inventory-service] Failed to query stock for item SKU-8965: connection timeout req-01cde3a5 trace-4d9b25a32f9d
+2024-01-15 10:30:30.298 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-e5ddd0bd trace-6c473075f10e
+2024-01-15 10:30:31.004 [INFO] [api-gateway] Response sent: 200 OK in 89ms req-9a8b41cc
+2024-01-15 10:30:34.414 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 30 requests waiting
+2024-01-15 10:30:35.381 [INFO] [api-gateway] Response sent: 200 OK in 87ms req-3e5b0ca5
+2024-01-15 10:30:40.954 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-1a65c829 trace-e1ae911690bc
+2024-01-15 10:30:44.135 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5145ms req-70cc93ac trace-e2f0e7123d4d
+2024-01-15 10:30:47.302 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-5ebbb901 trace-f3af4b906030
+2024-01-15 10:30:50.380 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-3f772fa8 trace-9f36b9a23d9a
+2024-01-15 10:30:51.115 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5176ms req-0f9395cc trace-d2d8e8083ff2
+2024-01-15 10:30:53.243 [ERROR] [inventory-service] Failed to query stock for item SKU-3641: connection timeout req-3f2021a5 trace-0614a62497b2
+2024-01-15 10:30:57.682 [INFO] [api-gateway] Response sent: 200 OK in 196ms req-af4d6b8c
+2024-01-15 10:31:02.505 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-1b2130ca trace-598912ebc313
+2024-01-15 10:31:03.437 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 57 requests waiting
+2024-01-15 10:31:05.089 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-597975c6 trace-01378777f578
+2024-01-15 10:31:08.486 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 39 requests waiting
+2024-01-15 10:31:12.200 [INFO] [api-gateway] Response sent: 200 OK in 121ms req-c96c1982
+2024-01-15 10:31:18.917 [WARN] [db-proxy] Connection wait queue depth: 53 (max: 100)
+2024-01-15 10:31:24.456 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-5bcc889e trace-a1cc6e4b258a
+2024-01-15 10:31:26.727 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 44 requests waiting
+2024-01-15 10:31:32.523 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-2af3bc7c trace-213d1a2dfa0f
+2024-01-15 10:31:33.090 [INFO] [api-gateway] Response sent: 200 OK in 146ms req-834827f7
+2024-01-15 10:31:35.822 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5106ms req-b9c59984 trace-92ee186c4877
+2024-01-15 10:31:47.307 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 38 requests waiting
+2024-01-15 10:31:48.567 [WARN] [db-proxy] Connection wait queue depth: 39 (max: 100)
+2024-01-15 10:31:53.622 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-91276d04 trace-f74afb04c881
+2024-01-15 10:31:57.411 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 30 requests waiting
+2024-01-15 10:32:03.198 [INFO] [api-gateway] Response sent: 200 OK in 181ms req-e3543e64
+2024-01-15 10:32:05.121 [ERROR] [payment-service] Failed to reach checkout-service: connection refused
+2024-01-15 10:32:08.371 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-b48993cd trace-955750081e68
+2024-01-15 10:32:08.704 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-78901 req-cas001 trace-cas001
+2024-01-15 10:32:08.943 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5087ms req-96bf592e trace-8af51b1166b4
+2024-01-15 10:32:10.138 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5177ms req-f40b67f5 trace-365293fea3bc
+2024-01-15 10:32:10.192 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-a0d0fc3f trace-9c673dafe106
+2024-01-15 10:32:10.978 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-1f1c77b5 trace-66c0d3ffde2d
+2024-01-15 10:32:11.122 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-040f282d trace-e7004151055a
+2024-01-15 10:32:12.080 [ERROR] [inventory-service] Bulk stock update failed: database connection pool timeout req-cas002 trace-cas002
+2024-01-15 10:32:15.079 [FATAL] [checkout-service] Service degraded: circuit breaker OPEN for all database operations
+2024-01-15 10:32:17.370 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-03bf5914 trace-54c2bd4b0294
+2024-01-15 10:32:18.043 [ERROR] [api-gateway] Error rate exceeded threshold: 45% of requests failing (threshold: 5%)
+2024-01-15 10:32:20.701 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-0ad02525 trace-912b3a0ea4cf
+2024-01-15 10:32:22.525 [ERROR] [payment-service] Retry exhausted (3/3): cannot complete payment for order ORD-79012 req-cas003 trace-cas003
+2024-01-15 10:32:25.259 [ERROR] [api-gateway] Response sent: 503 Service Unavailable for POST /api/payment in 312ms req-cas004 trace-cas004
+2024-01-15 10:32:28.772 [ERROR] [inventory-service] Cache invalidation failed: cannot refresh stock data from database req-cas005
+2024-01-15 10:32:30.210 [ERROR] [checkout-service] Order queue backing up: 156 pending orders, oldest 4m32s req-cas006
+2024-01-15 10:32:30.487 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-a54629f8 trace-1e598b568049
+2024-01-15 10:32:35.359 [ERROR] [payment-service] Webhook delivery failed: checkout-service health check returned 503
+2024-01-15 10:32:40.330 [ERROR] [inventory-service] Failed to query stock for item SKU-9908: connection timeout req-4d6563a0 trace-fc5d613c8cdb
+2024-01-15 10:32:40.964 [ERROR] [api-gateway] Error rate exceeded threshold: 62% of requests failing (threshold: 5%)
+2024-01-15 10:32:44.119 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5019ms req-ac1c636d trace-876f117fddc1
+2024-01-15 10:32:44.147 [ERROR] [checkout-service] Failed to acquire database connection: timeout after 5000ms req-6caabe7e trace-c3fd81c46b40
+2024-01-15 10:32:44.865 [ERROR] [inventory-service] Failed to query stock for item SKU-1287: connection timeout req-ec1558c6 trace-2aa934573baa
+2024-01-15 10:32:45.164 [FATAL] [db-proxy] Connection pool deadlock detected: 50 connections held, 0 returned in 120s
+2024-01-15 10:32:50.247 [ERROR] [inventory-service] Read replica also exhausted: failover connection pool at 100%
+2024-01-15 10:32:52.176 [ERROR] [api-gateway] Response sent: 504 Gateway Timeout for POST /api/checkout in 5087ms req-473d19d9 trace-6da6456e89e7
+2024-01-15 10:32:53.294 [ERROR] [api-gateway] Upstream timeout: checkout-service responded with 504 Gateway Timeout req-d9dd30ee trace-c9db5ad8c78e
+2024-01-15 10:32:55.592 [ERROR] [api-gateway] Response sent: 502 Bad Gateway for GET /api/products in 89ms req-cas007 trace-cas007
+2024-01-15 10:32:57.729 [INFO] [api-gateway] Response sent: 200 OK in 186ms req-ef33d8bc
+2024-01-15 10:33:02.614 [ERROR] [api-gateway] Response sent: 503 Service Unavailable for POST /api/checkout in 333ms req-8e852e0c trace-68a977bb6144
+2024-01-15 10:33:07.570 [ERROR] [api-gateway] Response sent: 503 Service Unavailable for POST /api/checkout in 247ms req-c96e96a2 trace-30f704143ea7
+2024-01-15 10:33:13.126 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 60 requests waiting
+2024-01-15 10:33:19.297 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-86672 req-312a70cc trace-6349075444f3
+2024-01-15 10:33:23.405 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-2723 req-36af059b trace-a6fa2442c9ad
+2024-01-15 10:33:27.961 [ERROR] [db-proxy] Connection pool exhausted: 50/50 active, 70 requests waiting
+2024-01-15 10:33:30.036 [WARN] [api-gateway] Health check: memory usage at 82% (4.1GB/5GB)
+2024-01-15 10:33:33.550 [ERROR] [api-gateway] Response sent: 503 Service Unavailable for POST /api/checkout in 486ms req-b3278764 trace-d09e208b6ca3
+2024-01-15 10:33:33.711 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-86563 req-774fc703 trace-5c518c53fb88
+2024-01-15 10:33:37.388 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-85813 req-33a73355 trace-6be67889be7f
+2024-01-15 10:33:46.375 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-8777 req-ec3b5f9e trace-c442bbe00244
+2024-01-15 10:34:00.798 [INFO] [inventory-service] Cron job started: inventory_reconciliation
+2024-01-15 10:34:04.206 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-8635 req-7898ef5a trace-3f72f51ad5d5
+2024-01-15 10:34:15.441 [ERROR] [inventory-service] Cron job failed: inventory_reconciliation - database connection unavailable
+2024-01-15 10:34:17.364 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-7557 req-76a01a00 trace-66f1afa924bf
+2024-01-15 10:34:24.098 [ERROR] [api-gateway] Response sent: 503 Service Unavailable for POST /api/checkout in 419ms req-86f8f2fd trace-5892e7026875
+2024-01-15 10:34:29.030 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-3205 req-7e7d24bd trace-fd4de0163bb2
+2024-01-15 10:34:38.742 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-86958 req-4356d893 trace-f0d67647e917
+2024-01-15 10:34:42.150 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-5569 req-f4329d68 trace-066ef2dd81c7
+2024-01-15 10:34:42.559 [ERROR] [inventory-service] Stock lookup failed: database unavailable for item SKU-9856 req-5b74d90e trace-add278a08f45
+2024-01-15 10:34:47.346 [ERROR] [payment-service] Payment processing failed: upstream checkout-service unavailable for order ORD-83261 req-1e34b1c7 trace-ae559fc3d054
+2024-01-15 10:34:47.995 [ERROR] [checkout-service] Order processing failed: circuit breaker OPEN req-8e039d10 trace-5218edcb9a4d
+2024-01-15 10:34:48.460 [ERROR] [api-gateway] Error rate: 67% of requests failing in last 60s
+2024-01-15 10:35:00.782 [WARN] [db-proxy] Initiating connection pool recovery: forcing recycling of idle connections
+2024-01-15 10:35:05.567 [INFO] [db-proxy] Recycled 8 stale connections, pool: 42/50 active
+2024-01-15 10:35:10.575 [INFO] [db-proxy] Connection pool utilization dropping: 84% (42/50 active connections)
+2024-01-15 10:35:15.269 [INFO] [checkout-service] Circuit breaker HALF-OPEN: testing database connectivity req-rec001 trace-rec001
+2024-01-15 10:35:18.692 [ERROR] [checkout-service] Circuit breaker test failed: query timeout after 3000ms req-rec001 trace-rec001
+2024-01-15 10:35:22.062 [WARN] [db-proxy] Recycled 5 more connections, pool: 37/50 active
+2024-01-15 10:35:25.375 [INFO] [db-proxy] Connection pool utilization: 74% (37/50 active connections)
+2024-01-15 10:35:30.783 [INFO] [checkout-service] Circuit breaker HALF-OPEN: retesting database connectivity req-rec002 trace-rec002
+2024-01-15 10:35:33.438 [INFO] [checkout-service] Circuit breaker test succeeded: query completed in 180ms req-rec002 trace-rec002
+2024-01-15 10:35:35.057 [INFO] [checkout-service] Circuit breaker CLOSED: resuming normal database operations
+2024-01-15 10:35:40.319 [INFO] [db-proxy] Connection pool stabilizing: 60% (30/50 active connections)
+2024-01-15 10:35:45.889 [INFO] [api-gateway] Error rate declining: 18% of requests failing (threshold: 5%)
+2024-01-15 10:35:50.551 [INFO] [payment-service] Retry succeeded: payment completed for order ORD-78901 req-rec003 trace-rec003
+2024-01-15 10:35:55.432 [INFO] [inventory-service] Database connection restored, resuming stock queries req-rec004 trace-rec004
+2024-01-15 10:36:00.020 [INFO] [db-proxy] Connection pool healthy: 40% (20/50 active connections)
+2024-01-15 10:36:10.324 [INFO] [checkout-service] Processing backlog: 156 pending orders, estimated completion 8 minutes
+2024-01-15 10:36:16.639 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-5945 req-cd6fbfbf trace-7b350b93cff5
+2024-01-15 10:36:17.843 [INFO] [payment-service] Payment authorized: txn-69ce2df887 for order ORD-99824 req-03d44ce7
+2024-01-15 10:36:20.100 [INFO] [api-gateway] Error rate declining: 5% of requests failing (threshold: 5%)
+2024-01-15 10:36:20.616 [INFO] [api-gateway] Response sent: 200 OK in 38ms req-13d84674
+2024-01-15 10:36:26.260 [INFO] [payment-service] Processing payment for order ORD-61111 amount $116.82 req-b10600fd trace-244c696e3c10
+2024-01-15 10:36:27.432 [INFO] [checkout-service] Validating cart items for order ORD-24884 req-cb1595b8
+2024-01-15 10:36:30.210 [INFO] [checkout-service] Backlog progress: 89/156 orders processed
+2024-01-15 10:36:40.683 [INFO] [payment-service] Payment queue draining: 12 pending payments remaining
+2024-01-15 10:36:46.641 [DEBUG] [db-proxy] Query executed in 71ms: SELECT * FROM products WHERE category = $1 LIMIT 50
+2024-01-15 10:36:50.992 [INFO] [api-gateway] Error rate normalized: 1.2% of requests failing (threshold: 5%)
+2024-01-15 10:36:56.092 [INFO] [api-gateway] Request received: GET /api/health req-9840756a trace-958d73564438
+2024-01-15 10:37:00.997 [INFO] [db-proxy] Connection pool nominal: 30% (15/50 active connections)
+2024-01-15 10:37:01.945 [INFO] [inventory-service] Stock available: 222 units for item SKU-2382 req-d5d7289e
+2024-01-15 10:37:07.547 [INFO] [inventory-service] Checking stock for item SKU-1895 req-a4645c28 trace-715a790cd122
+2024-01-15 10:37:10.219 [INFO] [checkout-service] Backlog cleared: all 156 pending orders processed
+2024-01-15 10:37:10.969 [INFO] [payment-service] Payment authorized: txn-87c2c8f20c for order ORD-44312 req-6030c603
+2024-01-15 10:37:16.518 [INFO] [db-proxy] Connection pool stats: active=9/50 idle=25/50 waiting=0
+2024-01-15 10:37:20.587 [INFO] [inventory-service] Stock data fully synchronized with database
+2024-01-15 10:37:20.900 [INFO] [checkout-service] Applying discount code SAVE20 for order ORD-43493 req-049cb7b1
+2024-01-15 10:37:25.204 [DEBUG] [inventory-service] Cache hit for item SKU-1448 stock lookup
+2024-01-15 10:37:30.732 [INFO] [api-gateway] Request received: PUT /api/cart/SKU-9941 req-0ecde2b3 trace-71942621d42a
+2024-01-15 10:37:30.980 [INFO] [api-gateway] All services healthy, normal operation resumed
+2024-01-15 10:37:45.606 [INFO] [payment-service] Payment queue empty, all pending transactions completed
+2024-01-15 10:37:47.506 [INFO] [api-gateway] Request received: GET /api/products req-d270a651 trace-1cff2d5b2736
+2024-01-15 10:37:55.752 [INFO] [inventory-service] Reserved 5 units of item SKU-3131 for order ORD-77681 req-76822e69

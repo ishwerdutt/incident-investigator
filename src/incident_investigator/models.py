@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 
@@ -18,6 +18,7 @@ def _new_id(prefix: str = "evt") -> str:
 # Log primitives
 # ---------------------------------------------------------------------------
 
+
 class LogLevel(str, Enum):
     DEBUG = "DEBUG"
     INFO = "INFO"
@@ -29,6 +30,7 @@ class LogLevel(str, Enum):
 
 class LogEvent(BaseModel):
     """A single normalised log line."""
+
     event_id: str = Field(default_factory=lambda: _new_id("evt"))
     timestamp: datetime
     level: LogLevel = LogLevel.UNKNOWN
@@ -47,8 +49,10 @@ class LogEvent(BaseModel):
 # Template clustering
 # ---------------------------------------------------------------------------
 
+
 class TemplateCluster(BaseModel):
     """A Drain3 template cluster with metadata."""
+
     template_id: str = Field(default_factory=lambda: _new_id("tpl"))
     pattern: str  # e.g. "Connection to <*> timed out after <*>ms"
     sample_message: str = ""
@@ -62,6 +66,7 @@ class TemplateCluster(BaseModel):
 
 class BucketCount(BaseModel):
     """Template occurrence count within a time bucket."""
+
     template_id: str
     bucket_start: datetime
     bucket_minutes: int = 1
@@ -74,6 +79,7 @@ class BucketCount(BaseModel):
 # Evidence ledger
 # ---------------------------------------------------------------------------
 
+
 class HypothesisStatus(str, Enum):
     OPEN = "open"
     TESTING = "testing"
@@ -84,6 +90,7 @@ class HypothesisStatus(str, Enum):
 
 class EvidenceItem(BaseModel):
     """A single piece of evidence linking a hypothesis to log events."""
+
     evidence_id: str = Field(default_factory=lambda: _new_id("evi"))
     hypothesis_id: str
     event_ids: list[str] = Field(
@@ -101,6 +108,7 @@ class EvidenceItem(BaseModel):
 
 class Hypothesis(BaseModel):
     """A candidate root cause with evidence trail."""
+
     id: str = Field(default_factory=lambda: _new_id("hyp"))
     statement: str
     predicted_evidence: list[str] = Field(default_factory=list)
@@ -116,8 +124,10 @@ class Hypothesis(BaseModel):
 # Investigation inputs & outputs
 # ---------------------------------------------------------------------------
 
+
 class IncidentBrief(BaseModel):
     """Output of the Triage agent: summarises the incident."""
+
     incident_window_start: datetime
     incident_window_end: datetime
     affected_services: list[str] = Field(default_factory=list)
@@ -128,6 +138,7 @@ class IncidentBrief(BaseModel):
 
 class InvestigationConfig(BaseModel):
     """Runtime config for a single investigation."""
+
     max_rounds: int = 3
     max_tool_calls_per_agent: int = 8
     max_total_tokens: int = 200_000
@@ -140,15 +151,17 @@ class InvestigationConfig(BaseModel):
 
 class InvestigationEvent(BaseModel):
     """A live event emitted during investigation (for SSE / callbacks)."""
+
     event_type: str  # STAGE_CHANGED, TOOL_CALLED, TOOL_RESULT, LEDGER_UPDATED, REPORT_READY
     stage: str | None = None
     agent: str | None = None
     data: dict[str, Any] = Field(default_factory=dict)
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 class InvestigationResult(BaseModel):
     """Final output of an investigation."""
+
     incident_id: str = Field(default_factory=lambda: _new_id("inc"))
     executive_summary: str = ""
     root_cause: str = ""
@@ -162,50 +175,22 @@ class InvestigationResult(BaseModel):
     total_tokens_used: int = 0
     total_tool_calls: int = 0
     investigation_duration_seconds: float = 0.0
+    brief: IncidentBrief | None = None
 
-    def report_markdown(self) -> str:
-        """Render the result as a Markdown report."""
-        lines: list[str] = []
-        lines.append(f"# Incident Report: {self.incident_id}\n")
-        lines.append(f"## Executive Summary\n{self.executive_summary}\n")
-        lines.append(f"## Root Cause\n{self.root_cause}\n")
-        lines.append(f"**Confidence:** {self.confidence:.0%}\n")
+    def report_markdown(self, brief: IncidentBrief | None = None) -> str:
+        """Render the result as a rich Markdown report."""
+        from incident_investigator.report.renderers import MarkdownRenderer
 
-        if self.incident_timeline:
-            lines.append("## Timeline")
-            for entry in self.incident_timeline:
-                ts = entry.get("timestamp", "?")
-                desc = entry.get("description", "")
-                lines.append(f"- **{ts}**: {desc}")
-            lines.append("")
+        return MarkdownRenderer().render(self, brief=brief or self.brief)
 
-        if self.supported_hypothesis:
-            h = self.supported_hypothesis
-            lines.append(f"## Supported Hypothesis\n**{h.statement}**\n")
-            for ev in h.evidence:
-                tag = "✅" if ev.supports else "❌"
-                lines.append(f"- {tag} {ev.summary} (events: {', '.join(ev.event_ids[:5])})")
-            lines.append("")
+    def report_json(self, indent: int = 2) -> str:
+        """Render the result as a structured JSON string."""
+        from incident_investigator.report.renderers import JsonRenderer
 
-        if self.ruled_out_hypotheses:
-            lines.append("## Ruled Out Hypotheses")
-            for h in self.ruled_out_hypotheses:
-                lines.append(f"- ~~{h.statement}~~ — {h.critic_notes or 'refuted'}")
-            lines.append("")
+        return JsonRenderer().render(self, indent=indent)
 
-        if self.recommended_mitigations:
-            lines.append("## Recommended Mitigations")
-            for m in self.recommended_mitigations:
-                lines.append(f"- {m}")
-            lines.append("")
+    def report_html(self, brief: IncidentBrief | None = None) -> str:
+        """Render the result as a self-contained HTML post-mortem report."""
+        from incident_investigator.report.renderers import HtmlRenderer
 
-        if self.unknowns:
-            lines.append("## Unknowns & Limitations")
-            for u in self.unknowns:
-                lines.append(f"- {u}")
-            lines.append("")
-
-        lines.append(f"---\n*Tokens used: {self.total_tokens_used:,} | "
-                      f"Tool calls: {self.total_tool_calls} | "
-                      f"Duration: {self.investigation_duration_seconds:.1f}s*")
-        return "\n".join(lines)
+        return HtmlRenderer().render(self, brief=brief or self.brief)
